@@ -1,3 +1,8 @@
+/**
+ * @author 寒影
+ * @date 2017-7-14
+ * @func 一款提供动画运行机制的插件
+ */
 define(function(require, exports, module) {
 	function Animation(doms, dur){
 		this.doms = doms;
