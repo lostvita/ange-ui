@@ -1,0 +1,100 @@
+.ted-btn{
+    display: inline-flex; align-items: center; justify-content: center; border: none; outline: none; cursor: pointer; border-radius: 3px;
+    &-content{ display: flex; justify-content: center; align-items: center; }
+    &.normal{ height: 30px; padding: 0px 15px; font-size: 14px; }
+    &.small{ height: 25px; padding: 0px 10px; font-size: 12px; }
+    &.large{ height: 37px; padding: 0px 25px; font-size: 16px; }
+    &.default{
+        border: 1px solid #ccc; color: #333; background: transparent;
+        &:hover{ border-color: #6c5ce7; color: #6c5ce7; }
+        &.success{
+            &:hover{ border-color: #099a97; color:#099a97; }
+        }
+        &.warn{
+            &:hover{ border-color: #f69314; color:#f69314; }
+        }
+        &.danger{
+            &:hover{ border-color: #ff4057; color:#ff4057; }
+        }
+        &[disabled]{ border-color: #ddd; color: #b3b3b3; cursor: not-allowed; }
+    }
+    &.primary{
+        border: 1px solid #7b88ff; background-color: #7b88ff; color: #fff;
+        &:hover{ border-color: #6c5ce7; background-color: #6c5ce7; }
+        &[disabled]{ border-color: #ceddef; background-color: #ceddef; color: #fff; cursor: not-allowed; }
+        &.success{
+            border-color: #40a798; background-color: #40a798; color: #fff;
+            &:hover{ border-color: #099a97; background-color:#099a97; }
+            &[disabled]{ border-color: #aeddcd; background-color: #aeddcd; color: #fff; cursor: not-allowed; }
+        }
+        &.warn{
+            border-color: #f09c67; background-color: #f09c67; color: #fff;
+            &:hover{ border-color: #f69314; background-color:#f69314; }
+            &[disabled]{ border-color: #f3d19e; background-color: #f3d19e; color: #fff; cursor: not-allowed; }
+        }
+        &.danger{
+            border-color: #ff5959; background-color: #ff5959; color: #fff;
+            &:hover{ border-color: #ff4057; background-color:#ff4057; }
+            &[disabled]{ border-color: #fab6b6; background-color: #fab6b6; color: #fff; cursor: not-allowed; }
+        }
+    }
+    &.secondary{
+        border: 1px solid #7b88ff; color: #7b88ff; background: transparent;
+        &:hover{ border-color: #6c5ce7; background-color: #6c5ce7; color: #fff; }
+        &[disabled]{ border-color: #a0cfff; background-color: transparent; color: #a0cfff; cursor: not-allowed; }
+        &.success{
+            border-color: #40a798; color: #40a798;
+            &:hover{ border-color: #099a97; background-color:#099a97; color: #ffffff; }
+            &[disabled]{ border-color: #b3e19d; color: #b3e19d; background-color: transparent; cursor: not-allowed; }
+        }
+        &.warn{
+            border-color: #f09c67; color: #f09c67;
+            &:hover{ border-color: #f69314; background-color:#f69314; color: #fff; }
+            &[disabled]{ border-color: #f3d19e; color: #f3d19e; background-color: transparent; cursor: not-allowed; }
+        }
+        &.danger{
+            border-color: #ff5959; color: #ff5959;
+            &:hover{ border-color: #ff4057; background-color:#ff4057; color: #fff; }
+            &[disabled]{ border-color: #fab6b6; color: #fab6b6; background-color: transparent; cursor: not-allowed; }
+        }
+    }
+    &.dashed{
+        border: 1px dashed #ccc; color: #333; background: transparent;
+        &:hover{ border-color: #6c5ce7; color: #6c5ce7; }
+        &.success{
+            &:hover{ border-color: #099a97; color:#099a97; }
+        }
+        &.warn{
+            &:hover{ border-color: #f69314; color: #f69314; }
+        }
+        &.danger{
+            &:hover{ border-color: #ff4057; color: #ff4057; }
+        }
+        &[disabled]{
+            border-color: #ddd; color: #b3b3b3; cursor: not-allowed;
+        }
+    }
+    &.link{ 
+        background: transparent; text-decoration: underline; color: #333333;
+        &:hover{ color: #6c5ce7; }
+        &.success{
+            &:hover{ color:#099a97; }
+        }
+        &.warn{
+            &:hover{ color: #f69314; }
+        }
+        &.danger{
+            &:hover{ color: #ff4057; }
+        }
+        &[disabled]{
+            color: #b3b3b3; cursor: not-allowed;
+        }
+    }
+    &.icon{
+        padding: 0 10px;
+    }
+    &.circle{
+        width: 30px; height: 30px;
+        border-radius: 15px;
+    }
+}
