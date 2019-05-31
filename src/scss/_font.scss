@@ -30,12 +30,23 @@ $icon-prefix: 'icon-';
     content: "\e95a";
   }
 }
-
 .#{$icon-prefix}news:before {
   content: "\e96f";
 }
+.#{$icon-prefix}news-fill:before {
+  content: "\e970";
+}
 .#{$icon-prefix}delete:before {
   content: "\e932";
+}
+.#{$icon-prefix}delete-fill:before {
+  content: "\e933";
+}
+.#{$icon-prefix}clock:before {
+  content: "\e92c";
+}
+.#{$icon-prefix}clock-fill:before {
+  content: "\e92d";
 }
 
 @keyframes laoding {

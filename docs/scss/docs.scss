@@ -1,3 +1,7 @@
+::-webkit-scrollbar{ width: 9px; height: 9px; border-radius: 8px; }
+::-webkit-scrollbar-thumb{ border-radius: 4px; background: rgba(0,0,0,.2); }
+::-webkit-scrollbar-button{ display: none; border-radius: 4px; }
+::-webkit-scrollbar-track{ background: #eee; }
 .ml5 { margin-left: 5px; }
 .mr5 { margin-right: 5px; }
 .mr10 { margin-right: 10px; }
