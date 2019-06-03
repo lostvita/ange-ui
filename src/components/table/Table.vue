@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { throttle } from '../../utils'
+import { throttle, querySelectorAll } from '../../utils'
 export default {
     name: 't-table', // eslint-disable-line
     data () {
@@ -135,6 +135,11 @@ export default {
                     passive: false
                 }
             )
+
+            if(this.hasLeftTable || this.hasRightTable) {
+                this.$el.addEventListener('mouseover', this.mouseOver, false)
+                this.$el.addEventListener('mouseout', this.mouseLeave, false)
+            }
         },
 
         scrollHandle () {
@@ -153,7 +158,27 @@ export default {
 
         transitionTop: throttle(function () {
             this.topChanging = false
-        }, 0)
+        }, 0),
+        mouseOver (e) {
+            this.hoverClass(e, 'add')
+        },
+        mouseLeave(e) {
+            this.hoverClass(e, 'remove')
+        },
+        hoverClass(e, type) {
+            const tr = e.target.closest('tr')
+            if(!tr) {
+                return
+            }
+            const idx = tr.rowIndex
+            const trs = querySelectorAll(`tbody tr:nth-child(${idx})`, this.$el)
+            if(trs.length === 0) {
+                return
+            }
+            trs.forEach(each => {
+                each.classList[type]('hover')
+            })
+        },
     },
     mounted () {
         this.init()

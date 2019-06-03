@@ -1,0 +1,23 @@
+{
+  "name": "ted-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "cd docs && vuepress dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiudongwei/ted-ui.git"
+  },
+  "author": "安歌",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qiudongwei/ted-ui/issues"
+  },
+  "homepage": "https://github.com/qiudongwei/ted-ui#readme"
+}

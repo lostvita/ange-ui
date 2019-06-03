@@ -57,12 +57,15 @@
 
 #### 普通表格
 <div class="component-wrapper">
+    <t-switch label="展开表格" size="small" v-model="isExpand" />
     <t-table offsetTop="57.5">
         <tr slot="thead">
+            <th v-if="isExpand">姓名</th>
             <th v-for="(each, index) in singleTableHead" :key="index">{{ each }}</th>
         </tr>
         <template v-for="(each, index) in singleTableBody">
             <tr slot='tbody' :key="`tbody-${index}`">
+                <td v-if="isExpand">{{ each.name }}</td>
                 <td>{{ each.verdict }}</td>
                 <td>{{ each.song }}</td>
             </tr>
@@ -71,12 +74,15 @@
 </div>
 
 ```vue
+<t-switch label="展开表格" size="small" v-model="isExpand" />
 <t-table offsetTop="57.5">
     <tr slot="thead">
+        <th v-if="isExpand">姓名</th>
         <th v-for="(each, index) in singleTableHead" :key="index">{{ each }}</th>
     </tr>
     <template v-for="(each, index) in singleTableBody">
         <tr slot='tbody' :key="`tbody-${index}`">
+            <td v-if="isExpand">{{ each.name }}</td>
             <td>{{ each.verdict }}</td>
             <td>{{ each.song }}</td>
         </tr>
@@ -96,6 +102,7 @@
             return {
                 singleTableHeadL: ['编号', '姓名'],
                 singleTableHead: ['判词', '判曲'],
+                isExpand: false,
                 singleTableBody: [{
                     no: 1,
                     name: '林黛玉',

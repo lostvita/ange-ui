@@ -1,0 +1,94 @@
+.t-switch{
+    display: inline-flex;
+    align-items: center;
+    .t-switch-label{
+        margin-right: 5px;
+        font-size: 14px;
+        color: #333333;
+    }
+    .t-switch-main{
+        position: relative;
+        width: 40px;
+        height: 20px;
+        line-height: 20px;
+        position: relative;
+        border-radius: 10px;
+        display: inline-block;
+        -webkit-appearance: none;
+        user-select: none;
+        outline: none;
+        background: #a7b1c2;
+        box-sizing: content-box;
+        border: 1px solid #e3e3e9;
+        transition: background-color ease 0.4s;
+        &.active {
+            background-color: #40a798;
+            transition: border-color 0.4s, background-color ease 0.4s;
+        }
+        &.small{
+            width: 24px;
+            height: 12px;
+            line-height: 12px;
+        }
+        &.large{
+            width: 64px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 15px;
+        }
+    }
+    .t-switch-input{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        opacity: 0;
+        height: 100%;
+        margin: 0px;
+        z-index: 2;
+        &[disabled]{ cursor: not-allowed; }
+    }
+    .t-switch-box{
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        border-radius: 10px;
+        background-color: #fff;
+        pointer-events: none;
+        box-sizing: border-box;
+        border: 1px solid #e3e3e9;
+        transition: transform 0.3s;
+        &.small{
+            width: 12px;
+            height: 12px;
+            border-radius: 6px;
+        }
+        &.large{
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+        }
+    }
+    .t-switch-value{
+        margin-left: 5px;
+        font-size: 15px;
+        color: #444;
+        &.small{ font-size: 12px; }
+        &.large{ font-size: 18px; }
+    }
+}
+
+.t-switch-main.active .t-switch-label {
+    color: #fff;
+    transform: translateX(5px);
+}
+.t-switch-main.active .t-switch-box {
+    border-color: #40a798;
+    transform: translateX(24px);
+    &.small{
+        transform: translateX(12px);
+    }
+    &.large{
+        transform: translateX(34px);
+    }
+}
