@@ -1,10 +1,12 @@
 <template>
-    <i class="icon" :class="'icon-' + icon" />
+    <i
+        class="ange-icon"
+        :class="`icon-${icon}`" />
 </template>
 
 <script>
 export default {
-    name: 't-icon', // eslint-disable-line
+    name: 'ag-icon',
     props: {
         icon: String
     }

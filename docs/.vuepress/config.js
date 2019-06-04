@@ -1,6 +1,11 @@
+const path = require('path')
+function resolve (dir) {
+    return path.join(__dirname, '..' ,'..', dir)
+}
+
 module.exports = {
-    title: 'Ted UI',
-    description: 'Ted UI Document',
+    title: 'Ange UI',
+    description: 'Ange UI Document',
     head: [
         ['link', { rel: 'shortcut icon', href: '/favicon.ico' }]
     ],
@@ -19,5 +24,17 @@ module.exports = {
     },
     markdown: {
         lineNumbers: true
+    },
+    configureWebpack: {
+        resolve: {
+            extensions: ['.js', '.vue', '.json'],
+            alias: {
+              'vue$': 'vue/dist/vue.esm.js',
+              '@': resolve('docs'),
+              '@scss': resolve('src/scss'),
+              '@components': resolve('src/components'),
+              '@utils': resolve('src/utils')
+            }
+        }
     }
 }

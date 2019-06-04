@@ -1,33 +1,48 @@
 <template>
-    <div class="rel ted-table" ref="container">
+    <div class="rel ange-table" ref="container">
         <div class="table-container" ref="content">
-            <table v-if="hasLeftTable" ref='leftTable' class='common-table table-left' :class="{fixed: fixed.left}" :style="leftStyle">
-                <thead class='thead-left' :class="{fixed: fixed.top}" :style="theadStyle">
-                    <slot name='leftThead'></slot>
+            <table v-if="hasLeftTable"
+                   ref="leftTable"
+                   class="common-table table-left"
+                   :class="{fixed: fixed.left}"
+                   :style="leftStyle">
+                <thead class="thead-left"
+                       :class="{fixed: fixed.top}"
+                       :style="theadStyle">
+                    <slot name="leftThead" />
                 </thead>
                 <tbody>
-                    <slot name='leftBody'></slot>
+                    <slot name="leftBody" />
                 </tbody>
             </table>
-            <table ref='table' class='common-table table-middle'>
-                <thead class='common-table-head thead-middle' :class="{fixed: fixed.top}" :style="theadStyle">
-                    <slot name='thead' />
+            <table ref="table" class="common-table table-middle">
+                <thead class="common-table-head thead-middle"
+                       :class="{fixed: fixed.top}"
+                       :style="theadStyle">
+                    <slot name="thead" />
                 </thead>
                 <tbody>
-                    <slot name='tbody' />
+                    <slot name="tbody" />
                 </tbody>
             </table>
-            <table v-if="hasRightTable" ref='rightTable' class='common-table placeholder'>
+            <table v-if="hasRightTable"
+                   ref="rightTable"
+                   class="common-table placeholder">
                 <tbody>
-                    <slot name='rightBody'></slot>
+                    <slot name="rightBody" />
                 </tbody>
             </table>
-            <table v-if="hasRightTable" ref='rightTable' class='common-table table-right' :style="rightStyle">
-                <thead class='thead-right' :class="{fixed: fixed.top}" :style="theadStyle">
-                    <slot name='rightThead'></slot>
+            <table v-if="hasRightTable"
+                   ref="rightTable"
+                   class="common-table table-right"
+                   :style="rightStyle">
+                <thead class="thead-right"
+                       :class="{fixed: fixed.top}"
+                       :style="theadStyle">
+                    <slot name="rightThead" />
                 </thead>
                 <tbody>
-                    <slot name='rightBody'></slot>
+                    <slot name="rightBody" />
                 </tbody>
             </table>
         </div>
@@ -35,9 +50,15 @@
 </template>
 
 <script>
-import { throttle, querySelectorAll } from '../../utils'
+import { throttle, querySelectorAll } from '@utils'
 export default {
-    name: 't-table', // eslint-disable-line
+    name: 'ag-table',
+    props: {
+        offsetTop: {
+            type: [String, Number],
+            default: () => 0
+        }
+    },
     data () {
         return {
             topChanging: false,
@@ -53,12 +74,6 @@ export default {
                 bottom: 0
             },
             initRight: 0,  // 右表格初始位置
-        }
-    },
-    props: {
-        offsetTop: {
-            type: [String, Number],
-            default: () => 0
         }
     },
     computed: {
@@ -109,6 +124,12 @@ export default {
         'clientRect.left': function (val) {
             this.fixed.left = val > 0
         }
+    },
+    mounted () {
+        this.init()
+    },
+    activated () {
+        this.init()
     },
     methods: {
         init () {
@@ -179,12 +200,6 @@ export default {
                 each.classList[type]('hover')
             })
         },
-    },
-    mounted () {
-        this.init()
-    },
-    activated () {
-        this.init()
     }
 }
 </script>

@@ -2,7 +2,7 @@
 
 #### 固定列的表格
 <div class="component-wrapper">
-    <t-table offsetTop="57.5">
+    <ag-table offsetTop="57.5">
         <tr slot='leftThead'>
             <th v-for="(each, index) in singleTableHeadL" :key="index">{{ each }}</th>
         </tr>
@@ -25,11 +25,11 @@
                 <td><router-link :to="`/detail/${each.no}`" class="mr5">查看</router-link><router-link :to="`/detail/${each.no}`">编辑</router-link></td>
             </tr>
         </template>
-    </t-table>
+    </ag-table>
 </div>
 
 ```vue
-<t-table offsetTop="57.5">
+<ag-table offsetTop="57.5">
     <tr slot='leftThead'>
         <th v-for="(each, index) in singleTableHeadL" :key="index">{{ each }}</th>
     </tr>
@@ -52,13 +52,13 @@
             <td><router-link :to="`/detail/${each.no}`" class="mr5">查看</router-link><router-link :to="`/detail/${each.no}`">编辑</router-link></td>
         </tr>
     </template>
-</t-table>
+</ag-table>
 ```
 
 #### 普通表格
 <div class="component-wrapper">
-    <t-switch label="展开表格" size="small" v-model="isExpand" />
-    <t-table offsetTop="57.5">
+    <ag-switch label="展开表格" size="small" v-model="isExpand" />
+    <ag-table offsetTop="57.5">
         <tr slot="thead">
             <th v-if="isExpand">姓名</th>
             <th v-for="(each, index) in singleTableHead" :key="index">{{ each }}</th>
@@ -70,12 +70,12 @@
                 <td>{{ each.song }}</td>
             </tr>
         </template>
-    </t-table>
+    </ag-table>
 </div>
 
 ```vue
-<t-switch label="展开表格" size="small" v-model="isExpand" />
-<t-table offsetTop="57.5">
+<ag-switch label="展开表格" size="small" v-model="isExpand" />
+<ag-table offsetTop="57.5">
     <tr slot="thead">
         <th v-if="isExpand">姓名</th>
         <th v-for="(each, index) in singleTableHead" :key="index">{{ each }}</th>
@@ -87,15 +87,15 @@
             <td>{{ each.song }}</td>
         </tr>
     </template>
-</t-table>
+</ag-table>
 ```
 
 <script>
     import Vue from 'vue'
-    import TedUI from '../../src'
-    import '../../src/scss/ted.scss'
-    import '../scss/docs.scss'
-    Vue.use(TedUI)
+    import AngeUi from '../../src'
+    import '@scss/ange.scss'
+    import '@/scss/docs.scss'
+    Vue.use(AngeUi)
 
     export default {
         data () {

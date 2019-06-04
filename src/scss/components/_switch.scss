@@ -1,12 +1,12 @@
-.t-switch{
+.ange-switch{
     display: inline-flex;
     align-items: center;
-    .t-switch-label{
+    &-label{
         margin-right: 5px;
         font-size: 14px;
         color: #333333;
     }
-    .t-switch-main{
+    &-main{
         position: relative;
         width: 40px;
         height: 20px;
@@ -37,7 +37,7 @@
             border-radius: 15px;
         }
     }
-    .t-switch-input{
+    &-input{
         position: absolute;
         top: 0px;
         left: 0px;
@@ -48,7 +48,7 @@
         z-index: 2;
         &[disabled]{ cursor: not-allowed; }
     }
-    .t-switch-box{
+    &-box{
         width: 20px;
         height: 20px;
         position: absolute;
@@ -69,7 +69,7 @@
             border-radius: 15px;
         }
     }
-    .t-switch-value{
+    &-value{
         margin-left: 5px;
         font-size: 15px;
         color: #444;
@@ -78,11 +78,11 @@
     }
 }
 
-.t-switch-main.active .t-switch-label {
+.ange-switch-main.active .ange-switch-label {
     color: #fff;
     transform: translateX(5px);
 }
-.t-switch-main.active .t-switch-box {
+.ange-switch-main.active .ange-switch-box {
     border-color: #40a798;
     transform: translateX(24px);
     &.small{

@@ -2,14 +2,14 @@
 home: false
 ---
 
-### Welcome To Use Ted UI
+### Welcome To Use Ange UI
 
 <script>
     import Vue from 'vue'
-    import TedUI from '../src'
+    import AngeUI from '../src'
     import './scss/docs.scss'
-    import '../src/scss/ted.scss'
-    Vue.use(TedUI)
+    import '@scss/ange.scss'
+    Vue.use(AngeUI)
 
     export default {}
 </script>

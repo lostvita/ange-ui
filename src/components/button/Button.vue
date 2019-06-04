@@ -1,6 +1,6 @@
 <template>
     <button
-        class="ted-btn"
+        class="ange-btn"
         :class="[ btnSize, color, {
             'default': isDefault,
             'primary': primary,
@@ -12,10 +12,10 @@
             'circle': circle
         }]"
         :disabled="loading"
-        @click="_click"
-    >
-        <span class="u-btn-content">
-            <t-icon v-if="icon" :icon="icon" />
+        @click="_click">
+        <span class="ange-btn-content">
+            <ag-icon v-if="icon"
+                     :icon="icon" />
             <slot />
         </span>
     </button>
@@ -23,7 +23,7 @@
 
 <script>
 export default {
-    name: 't-button', // eslint-disable-line
+    name: 'ag-button',
     props: {
         size: {
             type: String,

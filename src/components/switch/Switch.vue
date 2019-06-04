@@ -1,24 +1,25 @@
 <template>
-    <span class="t-switch">
-        <label class="t-switch-label" v-if="label" :for="id">{{ label }}</label>
-        <slot></slot>
-        <div class='t-switch-main' :class='[size, {active: model}]'>
-            <input type="checkbox" class='t-switch-input'
-                   v-model='model'
-                   :name='id'
+    <span class="ange-switch">
+        <label class="ange-switch-label" v-if="label" :for="id">{{ label }}</label>
+        <slot />
+        <div class="ange-switch-main" :class="[size, {active: model}]">
+            <input type="checkbox" 
+                   class="ange-switch-input"
+                   v-model="model"
+                   :name="id"
                    :disabled="disabled"
-                   @click.stop='() => {}'
-                   @change='$emit("change")'>
-            <span class='t-switch-box' :class="size"></span>
+                   @click.stop="() => {}"
+                   @change="$emit('change')">
+            <span class="ange-switch-box" :class="size" />
         </div>
-        <span v-if="text" class='t-switch-value' :class='size'>{{ text }}</span>
+        <span v-if="text" class="ange-switch-value" :class="size">{{ text }}</span>
     </span>
 </template>
 
 <script>
-import { randomId } from '../../utils'
+import { randomId } from '@utils'
 export default {
-    name: 't-switch',
+    name: 'ag-switch',
     props: {
         value: Boolean,
         name: String,

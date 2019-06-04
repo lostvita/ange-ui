@@ -1,23 +1,23 @@
 ### 开关 Switch
 <div class="component-wrapper">
-    <t-switch label="是否展开" v-model="expand"></t-switch>
+    <ag-switch label="是否展开" v-model="expand"></ag-switch>
 </div>
 
 <div class="component-wrapper">
-    <t-switch v-model="expand" size="small" onText="开" offText="关"><t-icon icon="news" class="mr5" /></t-switch>
+    <ag-switch v-model="expand" size="small" onText="开" offText="关"><ag-icon icon="news" class="mr5" /></ag-switch>
 </div>
 
 ```vue
-    <t-switch label="是否展开" v-model="expand"></t-switch>
-    <t-switch v-model="expand" size="small" onText="开" offText="关"><t-icon icon="news" class="mr5" /></t-switch>
+    <ag-switch label="是否展开" v-model="expand"></ag-switch>
+    <ag-switch v-model="expand" size="small" onText="开" offText="关"><ag-icon icon="news" class="mr5" /></ag-switch>
 ```
 
 <script>
     import Vue from 'vue'
-    import TedUI from '../../src'
-    import '../../src/scss/ted.scss'
-    import '../scss/docs.scss'
-    Vue.use(TedUI)
+    import AngeUI from '../../src'
+    import '@scss/ange.scss'
+    import '@/scss/docs.scss'
+    Vue.use(AngeUI)
 
     export default {
         data () {
