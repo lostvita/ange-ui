@@ -157,7 +157,7 @@
 ```
 
 #### API
-|ag-button属性|说明|类型|默认值|
+|属性|说明|类型|默认值|
 | :-----| :---- | :---- | :---- |
 |primary / secondary / dashed / link|按钮类别|Boolean|false|
 |color|按钮颜色，可选值：success / warn / danger|String|-|

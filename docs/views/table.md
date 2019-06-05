@@ -87,9 +87,10 @@
 ```
 
 #### API
-|ag-table属性|说明|类型|默认值|
+|属性|说明|类型|默认值|
 | :-----| :---- | :---- | :---- |
 |slot|表格插槽，可选择：leftThead / thead / rightThead / leftBody / tbody / rightBody|String|-|
+|offsetTop|顶部偏移距离|String / Number|-|
 
 <script>
     import Vue from 'vue'

@@ -13,7 +13,7 @@
 ```
 
 #### API
-|ag-switch属性|说明|类型|默认值|
+|属性|说明|类型|默认值|
 | :-----| :---- | :---- | :---- |
 |label|标签|String|-|
 |v-model指令|和switch的value值双向绑定|Boolean|false|
