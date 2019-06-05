@@ -18,18 +18,18 @@ module.exports = function(options) {
 
   if (options.components) {
     const root = './src/components'
-    baseWebpackConfig.entry = {
+    baseWebpackConfig.entry = { // UI组件主入口文件
       'components/index': [`${root}/index`]
     }
     const files = fs.readdirSync(root)
-    files.forEach(component => {
+    files.forEach(component => { // 定义各组件的入口文件
       if (fs.statSync(path.join(root, component)).isDirectory()) {
-        const entryKey = `components/${component}/index`
+        const entryKey = `components/${component}/index` 
         const entryValue = `${root}/${component}/index`
         baseWebpackConfig.entry[entryKey] = [entryValue]
       }
     })
-  } else {
+  } else { // UI对外入口文件
     baseWebpackConfig.entry = {
       [config.lib.filename]: './src/index.js'
     }

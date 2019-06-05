@@ -5,7 +5,6 @@ process.env.NODE_ENV = 'production'
 const ora = require('ora')
 const rm = require('rimraf')
 const path = require('path')
-const chalk = require('chalk')
 const webpack = require('webpack')
 const config = require('../config')
 const webpackConfig = require('./webpack.lib.conf')
@@ -16,14 +15,14 @@ spinner.start()
 rm(path.join(config.lib.assetsRoot, config.lib.assetsSubDirectory), err => {
   if (err) throw err
 
-  const configs = [
-    webpackConfig({
+  const configs = [ // 构建三次
+    webpackConfig({ // 有压缩
       minimize: true
     }),
-    webpackConfig({
+    webpackConfig({ // 未压缩
       minimize: false
     }),
-    webpackConfig({
+    webpackConfig({ // 构建各子组件
       components: true,
       minimize: true
     })

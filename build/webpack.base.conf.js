@@ -10,10 +10,10 @@ function resolve (dir) {
 
 module.exports = {
   mode: isProduction ? 'production' : 'development',
-  entry: {
+  entry: { // 对于不同环境的构建做不同的覆写处理
     app: './docs/main.js'
   },
-  output: {
+  output: { // 对于不同环境的构建做不同的覆写处理
     path: config.build ?  config.build.assetsRoot : config.lib.assetsRoot,
     filename: '[name].js',
     publicPath: isProduction
