@@ -17,11 +17,7 @@ exports.cssLoaders = function (options) {
   options = options || {}
 
   const cssLoader = {
-    loader: 'css-loader',
-    options: {
-      minimize: options.minimize,
-      sourceMap: options.sourceMap
-    }
+    loader: 'css-loader'
   }
 
   // generate loader string to be used with extract text plugin

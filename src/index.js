@@ -1,3 +1,4 @@
+import './scss/ange.scss'
 import * as components from './components'
 
 function install(Vue, opts = {}) {

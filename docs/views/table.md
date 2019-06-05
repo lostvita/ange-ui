@@ -63,13 +63,11 @@
             <th v-if="isExpand">姓名</th>
             <th v-for="(each, index) in singleTableHead" :key="index">{{ each }}</th>
         </tr>
-        <template v-for="(each, index) in singleTableBody">
-            <tr slot='tbody' :key="`tbody-${index}`">
-                <td v-if="isExpand">{{ each.name }}</td>
-                <td>{{ each.verdict }}</td>
-                <td>{{ each.song }}</td>
-            </tr>
-        </template>
+        <tr v-for="(each, index) in singleTableBody" slot='tbody' :key="`tbody-${index}`">
+            <td v-if="isExpand">{{ each.name }}</td>
+            <td>{{ each.verdict }}</td>
+            <td>{{ each.song }}</td>
+        </tr>
     </ag-table>
 </div>
 
@@ -80,20 +78,22 @@
         <th v-if="isExpand">姓名</th>
         <th v-for="(each, index) in singleTableHead" :key="index">{{ each }}</th>
     </tr>
-    <template v-for="(each, index) in singleTableBody">
-        <tr slot='tbody' :key="`tbody-${index}`">
-            <td v-if="isExpand">{{ each.name }}</td>
-            <td>{{ each.verdict }}</td>
-            <td>{{ each.song }}</td>
-        </tr>
-    </template>
+    <tr v-for="(each, index) in singleTableBody" slot='tbody' :key="`tbody-${index}`">
+        <td v-if="isExpand">{{ each.name }}</td>
+        <td>{{ each.verdict }}</td>
+        <td>{{ each.song }}</td>
+    </tr>
 </ag-table>
 ```
+
+#### API
+|ag-table属性|说明|类型|默认值|
+| :-----| :---- | :---- | :---- |
+|slot|表格插槽，可选择：leftThead / thead / rightThead / leftBody / tbody / rightBody|String|-|
 
 <script>
     import Vue from 'vue'
     import AngeUi from '../../src'
-    import '@scss/ange.scss'
     import '@/scss/docs.scss'
     Vue.use(AngeUi)
 

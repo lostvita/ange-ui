@@ -17,10 +17,14 @@
 <ag-icon icon="clock-fill" title="clock-fill" />
 ```
 
+#### API
+|ag-icon属性|说明|类型|默认值|
+| :-----| :---- | :---- | :---- |
+|icon|图标内容|String|-|
+
 <script>
     import Vue from 'vue'
     import AngeUI from '../../src'
-    import '@scss/ange.scss'
     import '@/scss/docs.scss'
     Vue.use(AngeUI)
 
