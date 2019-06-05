@@ -1,11 +1,11 @@
 ## Ange UI
 
-## Install
+### Install
 ```shell
 npm i ange-ui -S
 ```
 
-## Usage
+### Usage
 
 ```shell
 import Vue from 'vue'
