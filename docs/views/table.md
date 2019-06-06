@@ -94,7 +94,7 @@
 
 <script>
     import Vue from 'vue'
-    import AngeUi from '../../src'
+    import AngeUi from '@src'
     import '@/scss/docs.scss'
     Vue.use(AngeUi)
 

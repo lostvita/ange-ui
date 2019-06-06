@@ -1,5 +1,5 @@
 import './scss/ange.scss'
-import * as components from './components'
+import components from './components'
 
 function install(Vue, opts = {}) {
     Object.values(components).forEach((each) => {

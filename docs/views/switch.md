@@ -23,7 +23,7 @@
 
 <script>
     import Vue from 'vue'
-    import AngeUI from '../../src'
+    import AngeUI from '@src'
     import '@/scss/docs.scss'
     Vue.use(AngeUI)
 

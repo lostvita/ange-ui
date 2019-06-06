@@ -24,9 +24,10 @@
 
 <script>
     import Vue from 'vue'
-    import AngeUI from '../../src'
+    import '@scss/ange.scss'
+    import Icon from '@src/components/icon'
     import '@/scss/docs.scss'
-    Vue.use(AngeUI)
+    Vue.use(Icon)
 
     export default {}
 </script>

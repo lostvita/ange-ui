@@ -6,7 +6,8 @@
     <ag-button class="mr10" primary>主按钮</ag-button>
     <ag-button class="mr10" secondary>次级按钮</ag-button>
     <ag-button class="mr10" dashed>虚线按钮</ag-button>
-    <ag-button class="mr10" link href="//www.google.com" external>文字按钮</ag-button>
+    <ag-button class="mr10" link>文字按钮</ag-button>
+    <ag-button class="mr10" link href="//www.baidu.com" target="_blank" external>外链按钮</ag-button>
 </div>
 
 ``` vue
@@ -14,7 +15,8 @@
 <ag-button class="mr10" primary>主按钮</ag-button>
 <ag-button class="mr10" secondary>次级按钮</ag-button>
 <ag-button class="mr10" dashed>虚线按钮</ag-button>
-<ag-button class="mr10" link href="//www.google.com" external>文字按钮</ag-button>
+<ag-button class="mr10" link>文字按钮</ag-button>
+<ag-button class="mr10" link href="//www.baidu.com" target="_blank" external>外链按钮</ag-button>
 ```
 
 #### 正常状态（Large Size）
@@ -170,9 +172,9 @@
 
 <script>
     import Vue from 'vue'
-    import AngeUI from '../../src'
+    import Ange from '@src'
     import '@/scss/docs.scss'
-    Vue.use(AngeUI)
+    Vue.use(Ange)
 
     export default {
         data () {

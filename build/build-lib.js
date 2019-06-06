@@ -16,10 +16,10 @@ rm(path.join(config.lib.assetsRoot, config.lib.assetsSubDirectory), err => {
   if (err) throw err
 
   const configs = [ // 构建三次
-    webpackConfig({ // 有压缩
+    webpackConfig({ // 压缩css样式表
       minimize: true
     }),
-    webpackConfig({ // 未压缩
+    webpackConfig({ // 未压缩css样式表
       minimize: false
     }),
     webpackConfig({ // 构建各子组件

@@ -8,10 +8,5 @@ home: false
 ![An image](./assets/salute.jpg)
 
 <script>
-    import Vue from 'vue'
-    import AngeUI from '../src'
-    import './scss/docs.scss'
-    Vue.use(AngeUI)
-
     export default {}
 </script>

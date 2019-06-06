@@ -3,7 +3,7 @@ import Icon from './icon'
 import Switch from './switch'
 import Table from './table'
 
-export {
+export default {
     Button,
     Icon,
     Switch,
