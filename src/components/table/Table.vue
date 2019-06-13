@@ -27,13 +27,6 @@
             </table>
             <table v-if="hasRightTable"
                    ref="rightTable"
-                   class="common-table placeholder">
-                <tbody>
-                    <slot name="rightBody" />
-                </tbody>
-            </table>
-            <table v-if="hasRightTable"
-                   ref="rightTable"
                    class="common-table table-right"
                    :style="rightStyle">
                 <thead class="thead-right"
@@ -61,8 +54,6 @@ export default {
     },
     data () {
         return {
-            topChanging: false,
-            leftChanging: false,
             fixed: { // 表格顶、左、右栏固定标识
                 top: false,
                 left: false
@@ -86,14 +77,10 @@ export default {
         scroller () {
             return window
         },
-        xScroller() {
-            return this.$refs.content
-        },
         theadStyle () {
             const { top } = this.clientRect
             return {
-                transform: `translate3d(0px, ${this.fixed.top &&
-                    !this.topChanging
+                transform: `translate3d(0px, ${this.fixed.top
                         ? -top
                         : 0}px, 1px)`
             }
@@ -101,8 +88,7 @@ export default {
         leftStyle () {
             const { left } = this.clientRect
             return {
-                transform: `translate3d(${this.fixed.left &&
-                    !this.leftChanging
+                transform: `translate3d(${this.fixed.left
                         ? left
                         : 0}px, 0px, 1px)`
             }
@@ -117,9 +103,6 @@ export default {
     watch: {
         'clientRect.top': function (val) {
             this.fixed.top = val < 0
-            if(val < 0) {
-                this.transitionTop()
-            }
         },
         'clientRect.left': function (val) {
             this.fixed.left = val > 0
@@ -127,6 +110,8 @@ export default {
     },
     mounted () {
         this.init()
+        const { top } = this.$refs.container.getBoundingClientRect()
+        // this.headTop = Math.floor(top)
     },
     activated () {
         this.init()
@@ -134,9 +119,9 @@ export default {
     methods: {
         init () {
             if(this.hasRightTable) {
-                 const content = this.$refs.content.getBoundingClientRect()
+                const container = this.$refs.container.getBoundingClientRect()
                 const rightTable = this.$refs.rightTable.getBoundingClientRect()
-                this.clientRect.right = Math.floor(rightTable.x + rightTable.width - content.x - content.width)
+                this.clientRect.right = Math.floor(rightTable.right  - container.right)
                 this.initRight = this.clientRect.right
             }
 
@@ -168,7 +153,7 @@ export default {
             if(!table) return
 
             const { top } = table.getBoundingClientRect()
-            this.clientRect.top = Math.floor(top - parseInt(this.offsetTop, 10))
+            this.clientRect.top = Math.floor(top - parseInt(this.headTop || this.offsetTop, 10))
             this.clientRect.left = Math.floor(this.$refs.container.scrollLeft)
 
             const right = Math.floor(this.initRight - this.$refs.container.scrollLeft)
@@ -177,9 +162,6 @@ export default {
 
         scrollerMouseWheel () {},
 
-        transitionTop: throttle(function () {
-            this.topChanging = false
-        }, 0),
         mouseOver (e) {
             this.hoverClass(e, 'add')
         },

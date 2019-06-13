@@ -1,16 +1,28 @@
 export function throttle (func, wait, before) {
     let isInvoking = false
-    wait = wait || 300
+    let isFirstExecute = false
+    let thTimer = null
+    wait = wait
+    if(!Array.isArray(func)) {
+        func = [func]
+    }
     return function (arg) {
-        if (isInvoking) return
+        if(isInvoking) return
+        if(!thTimer) { // 第一次
+            for(let i in func) {
+                func[i].call(this, arg)
+            }
+            isFirstExecute = true
+        }
         isInvoking = true
         before && before.call(this)
-        window.setTimeout(async () => {
-            if(!Array.isArray(func)) {
-                func = [func]
-            }
-            for(let i in func) {
-                await func[i].call(this, arg)
+        thTimer = window.setTimeout(async () => {
+            if(isFirstExecute) {
+                isFirstExecute = false
+            } else {
+                for(let i in func) {
+                    await func[i].call(this, arg)
+                }
             }
             isInvoking = false
         }, wait)
